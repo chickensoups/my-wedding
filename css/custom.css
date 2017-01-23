@@ -1,0 +1,24 @@
+.welcome {
+    position: relative;
+    text-align: center;
+}
+
+.welcome .slider {
+    height: 100%;
+}
+
+.welcome .slider img {
+    width: 100%;
+}
+
+.counterWrapper {
+	text-align: center;;
+}
+
+.counterDiv {
+    position: absolute;
+    top: 50px;
+    z-index: 100;
+    text-shadow: 2px 2px 2px #ffffff;
+    font-weight: bold;
+}

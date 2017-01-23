@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Vương & Duyên</title>
+    <!-- Bootstrap -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet">
+
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/other/countdowncube.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="wedding-app">
+    <uib-tabset active="activeJustified" justified="true">
+        <uib-tab index="0" heading="Xin chào/ Welcome">
+          <div class="welcome" style="" ng-controller="WelcomeController as welcomeCtrl">
+            <div class="counterWrapper col-md-6 col-md-offset-3">
+              <div class="counterDiv">
+                <h1 style="font-size: 50px">Đám cưới của Vương & Duyên</h1>
+                <h1>Vương & Duyên's wedding</h1>
+                <div id="counter">
+                </div>
+              </div>
+            </div>
+            <div class="slider" uib-carousel active="welcomeCtrl.active" interval="welcomeCtrl.myInterval" no-wrap="welcomeCtrl.noWrapSlides" no-pause="welcomeCtrl.noPause">
+              <div uib-slide ng-repeat="slide in welcomeCtrl.slides track by slide.id" index="slide.id">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+                <div class="carousel-caption">
+                  <h4>Slide {{slide.id}}</h4>
+                  <p>{{slide.text}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </uib-tab>
+        <uib-tab index="1" heading="Chuyện tình/ Our Story">
+          DCM2
+        </uib-tab>
+        <uib-tab index="2" heading="Ảnh cưới/ Photo Album">
+          DCM3
+        </uib-tab>
+        <uib-tab index="3" heading="Địa điểm/ Location">
+          DCM4
+        </uib-tab>
+    </uib-tabset>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-touch/angular-touch.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
+    <script type="text/javascript" src="scripts/other/countdowncube.js"></script>
+    <script type="text/javascript" src="scripts/other/startcountdown.js"></script>
+
+    <!-- modules -->
+    <script type="text/javascript" src="scripts/main.js"></script>
+
+    <!-- controller -->
+    <script type="text/javascript" src="scripts/controllers/welcome.js"></script>    
+
+</body>
+
+</html>
