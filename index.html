@@ -11,9 +11,10 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="node_modules/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
     <link href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet">
-
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/other/countdowncube.css" rel="stylesheet">
+    <link rel='stylesheet' href='unitegallery/dist/css/unite-gallery.css' type='text/css' />
+    <link rel='stylesheet' href='unitegallery/dist/themes/default/ug-theme-default.css' type='text/css' />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,34 +26,40 @@
 <body ng-app="wedding-app">
     <uib-tabset active="activeJustified" justified="true">
         <uib-tab index="0" heading="Xin chào/ Welcome">
-          <div class="welcome" style="" ng-controller="WelcomeController as welcomeCtrl">
-            <div class="counterWrapper col-md-6 col-md-offset-3">
-              <div class="counterDiv">
-                <h1 style="font-size: 50px">Đám cưới của Vương & Duyên</h1>
-                <h1>Vương & Duyên's wedding</h1>
-                <div id="counter">
+            <div class="welcome" style="" ng-controller="WelcomeController as welcomeCtrl">
+                <div class="counterWrapper col-md-6 col-md-offset-3">
+                    <div class="counterDiv">
+                        <h1 style="font-size: 50px">Đám cưới của Vương & Duyên</h1>
+                        <h1>Vương & Duyên's wedding</h1>
+                        <div id="counter">
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="slider" uib-carousel active="welcomeCtrl.active" interval="welcomeCtrl.myInterval" no-wrap="welcomeCtrl.noWrapSlides" no-pause="welcomeCtrl.noPause">
-              <div uib-slide ng-repeat="slide in welcomeCtrl.slides track by slide.id" index="slide.id">
-                <img ng-src="{{slide.image}}" style="margin:auto;">
-                <div class="carousel-caption">
-                  <h4>Slide {{slide.id}}</h4>
-                  <p>{{slide.text}}</p>
+                <div class="slider" uib-carousel active="welcomeCtrl.active" interval="welcomeCtrl.myInterval" no-wrap="welcomeCtrl.noWrapSlides" no-pause="welcomeCtrl.noPause">
+                    <div uib-slide ng-repeat="slide in welcomeCtrl.slides track by slide.id" index="slide.id">
+                        <img ng-src="{{slide.image}}" style="margin:auto;">
+                        <div class="carousel-caption">
+                            <h4>Slide {{slide.id}}</h4>
+                            <p>{{slide.text}}</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </uib-tab>
         <uib-tab index="1" heading="Chuyện tình/ Our Story">
-          DCM2
+            DCM2
         </uib-tab>
         <uib-tab index="2" heading="Ảnh cưới/ Photo Album">
-          DCM3
+            <div class="album" style="text-align: center;" ng-controller="AlbumController as albumCtrl">
+                <div class="galleryWrapper">
+                    <div id="gallery" style="display:none;">
+                        <img ng-repeat="image in albumCtrl.images" alt="{{image.text}}" src="images/album/thumb/{{image.name}}" data-image="images/album/{{image.name}}" data-description="{{image.text}}">
+                    </div>
+                </div>
+            </div>
         </uib-tab>
         <uib-tab index="3" heading="Địa điểm/ Location">
-          DCM4
+            DCM4
         </uib-tab>
     </uib-tabset>
     <script src="node_modules/jquery/dist/jquery.js"></script>
@@ -62,16 +69,19 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
     <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
-
+    <!-- other -->
     <script type="text/javascript" src="scripts/other/countdowncube.js"></script>
-    <script type="text/javascript" src="scripts/other/startcountdown.js"></script>
+    <script type="text/javascript" src="unitegallery/dist/js/unitegallery.min.js"></script>
+    <script type="text/javascript" src="unitegallery/dist/themes/default/ug-theme-default.js"></script>
+
+    <script type="text/javascript" src="scripts/other/jqueryStuff.js"></script>
 
     <!-- modules -->
     <script type="text/javascript" src="scripts/main.js"></script>
 
     <!-- controller -->
-    <script type="text/javascript" src="scripts/controllers/welcome.js"></script>    
-
+    <script type="text/javascript" src="scripts/controllers/welcome.js"></script>
+    <script type="text/javascript" src="scripts/controllers/album.js"></script>
 </body>
 
 </html>
