@@ -13,8 +13,11 @@
     <link href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/other/countdowncube.css" rel="stylesheet">
-    <link rel='stylesheet' href='unitegallery/dist/css/unite-gallery.css' type='text/css' />
-    <link rel='stylesheet' href='unitegallery/dist/themes/default/ug-theme-default.css' type='text/css' />
+    <link href='unitegallery/dist/css/unite-gallery.css' rel='stylesheet' type='text/css' />
+    <link href='unitegallery/dist/themes/default/ug-theme-default.css' rel='stylesheet' type='text/css' />
+    <!-- <link href="bower_components/angular-timeline/dist/angular-timeline-bootstrap.css" rel="stylesheet"/> -->
+    <link href="bower_components/angular-timeline/dist/angular-timeline.css" rel='stylesheet' />
+    <link href="bower_components/angular-timeline/dist/angular-timeline-animations.css" rel='stylesheet' />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -47,7 +50,22 @@
             </div>
         </uib-tab>
         <uib-tab index="1" heading="Chuyện tình/ Our Story">
-            DCM2
+            <div class="story" style="" ng-controller="StoryController as storyCtrl">
+                <timeline>
+                    <timeline-event ng-repeat="event in storyCtrl.events" side="alternate">
+                        <timeline-badge class="{{event.badgeClass}}">
+                            <i class="glyphicon {{event.badgeIconClass}}"></i>
+                        </timeline-badge>
+                        <timeline-panel class="{{event.badgeClass}}">
+                            <timeline-heading>
+                                <h4>{{event.title}}</h4>
+                            </timeline-heading>
+                            <p>{{event.content}}</p>
+                            <img ng-src="images/timeline/{{event.img}}">
+                        </timeline-panel>
+                    </timeline-event>
+                </timeline>
+            </div>
         </uib-tab>
         <uib-tab index="2" heading="Ảnh cưới/ Photo Album">
             <div class="album" style="text-align: center;" ng-controller="AlbumController as albumCtrl">
@@ -73,15 +91,15 @@
     <script type="text/javascript" src="scripts/other/countdowncube.js"></script>
     <script type="text/javascript" src="unitegallery/dist/js/unitegallery.min.js"></script>
     <script type="text/javascript" src="unitegallery/dist/themes/default/ug-theme-default.js"></script>
-
+    <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
+    <script type="text/javascript" src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
     <script type="text/javascript" src="scripts/other/jqueryStuff.js"></script>
-
     <!-- modules -->
     <script type="text/javascript" src="scripts/main.js"></script>
-
     <!-- controller -->
     <script type="text/javascript" src="scripts/controllers/welcome.js"></script>
     <script type="text/javascript" src="scripts/controllers/album.js"></script>
+    <script type="text/javascript" src="scripts/controllers/story.js"></script>
 </body>
 
 </html>

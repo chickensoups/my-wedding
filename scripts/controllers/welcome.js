@@ -44,11 +44,4 @@ angular.module('wedding-app')
 		var marriedTime = new Date('2017-02-11');
 
 		this.coundownTime = Date.now() - marriedTime.getTime();
-
-		$('#counter').countdownCube({
-	        target: new Date('February 11, 2017 11:30:00'),
-	        cubeSize: 150,
-	        background: 'rgba( 255, 150, 150, 0.8 )',
-	        color: 'white',
-	    });
 	});

@@ -22,3 +22,7 @@
     text-shadow: 2px 2px 2px #ffffff;
     font-weight: bold;
 }
+
+.not-visible {
+  visibility: hidden;
+}

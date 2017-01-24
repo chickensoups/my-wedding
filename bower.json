@@ -15,5 +15,7 @@
     "tests"
   ],
   "dependencies": {
+    "angular-timeline": "^1.7.0",
+    "angular-scroll-animate": "^0.9.9"
   }
 }

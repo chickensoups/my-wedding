@@ -1,1 +1,1 @@
-angular.module('wedding-app', ['ui.bootstrap']);
+angular.module('wedding-app', ['ui.bootstrap', 'angular-scroll-animate', 'angular-timeline']);

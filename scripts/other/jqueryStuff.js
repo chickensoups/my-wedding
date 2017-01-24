@@ -12,7 +12,7 @@ $(document).ready(function() {
 
         gallery_width: 2700,
         gallery_height: 1200,
-        thumb_width: 160,
+        thumb_width: 400,
         thumb_height: 100,
 
         slider_scale_mode: "fit",
