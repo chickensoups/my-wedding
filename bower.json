@@ -16,6 +16,9 @@
   ],
   "dependencies": {
     "angular-timeline": "^1.7.0",
-    "angular-scroll-animate": "^0.9.9"
+    "angular-scroll-animate": "^0.9.9",
+    "angular-simple-logger": "^0.1.7",
+    "ui-leaflet": "^2.0.0",
+    "ui-leaflet-layers": "^0.1.3"
   }
 }

@@ -26,3 +26,11 @@
 .not-visible {
   visibility: hidden;
 }
+
+.story img {
+	width: 400px;
+}
+
+.timeline timeline-event:nth-child(odd) {
+	text-align: right;
+}

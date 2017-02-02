@@ -15,9 +15,9 @@
     <link href="css/other/countdowncube.css" rel="stylesheet">
     <link href='unitegallery/dist/css/unite-gallery.css' rel='stylesheet' type='text/css' />
     <link href='unitegallery/dist/themes/default/ug-theme-default.css' rel='stylesheet' type='text/css' />
-    <!-- <link href="bower_components/angular-timeline/dist/angular-timeline-bootstrap.css" rel="stylesheet"/> -->
     <link href="bower_components/angular-timeline/dist/angular-timeline.css" rel='stylesheet' />
     <link href="bower_components/angular-timeline/dist/angular-timeline-animations.css" rel='stylesheet' />
+    <link href="bower_components/leaflet/dist/leaflet.css" rel='stylesheet' />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,7 +27,7 @@
 </head>
 
 <body ng-app="wedding-app">
-    <uib-tabset active="activeJustified" justified="true">
+    <uib-tabset active="0" justified="true">
         <uib-tab index="0" heading="Xin chào/ Welcome">
             <div class="welcome" style="" ng-controller="WelcomeController as welcomeCtrl">
                 <div class="counterWrapper col-md-6 col-md-offset-3">
@@ -53,14 +53,14 @@
             <div class="story" style="" ng-controller="StoryController as storyCtrl">
                 <timeline>
                     <timeline-event ng-repeat="event in storyCtrl.events" side="alternate">
-                        <timeline-badge class="{{event.badgeClass}}">
+                        <timeline-badge class="{{event.badgeClass}} {{ event.showed ? '': 'timeline-hidden'}}" when-visible="storyCtrl.animateElementIn" when-not-visible="storyCtrl.animateElementOut">
                             <i class="glyphicon {{event.badgeIconClass}}"></i>
                         </timeline-badge>
-                        <timeline-panel class="{{event.badgeClass}}">
+                        <timeline-panel class="{{event.badgeClass}} {{ event.showed ? '': 'timeline-hidden'}}" when-visible="storyCtrl.animateElementIn" when-not-visible="storyCtrl.animateElementOut">
                             <timeline-heading>
-                                <h4>{{event.title}}</h4>
+                                <h3>{{event.title}}</h3>
                             </timeline-heading>
-                            <p>{{event.content}}</p>
+                            <h4>{{event.content}}</h4>
                             <img ng-src="images/timeline/{{event.img}}">
                         </timeline-panel>
                     </timeline-event>
@@ -76,22 +76,31 @@
                 </div>
             </div>
         </uib-tab>
-        <uib-tab index="3" heading="Địa điểm/ Location">
-            DCM4
+        <uib-tab index="3" heading="Địa điểm/ Location" id="location">
+            <div class="location" ng-controller="LocationController as locationCtrl">
+                <leaflet center="locationCtrl.center" layers="locationCtrl.layers" paths="locationCtrl.paths" markers="locationCtrl.markers" closePopupOnClick="false" width="100%" height="800px"></leaflet>
+            </div>
         </uib-tab>
     </uib-tabset>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
     <script src="node_modules/angular-touch/angular-touch.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
     <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO7DYmgsNswVepxloLD78YxZu5tJbDptM&libraries=geometry"></script> -->
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO7DYmgsNswVepxloLD78YxZu5tJbDptM"></script> -->
+    <script src="bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="node_modules/leaflet-plugins/layer/tile/Bing.js"></script>
+    <script src="bower_components/ui-leaflet/dist/ui-leaflet.js"></script>
+    <script src="bower_components/ui-leaflet-layers/dist/ui-leaflet-layers.js"></script>
     <!-- other -->
     <script type="text/javascript" src="scripts/other/countdowncube.js"></script>
     <script type="text/javascript" src="unitegallery/dist/js/unitegallery.min.js"></script>
     <script type="text/javascript" src="unitegallery/dist/themes/default/ug-theme-default.js"></script>
-    <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
     <script type="text/javascript" src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
     <script type="text/javascript" src="scripts/other/jqueryStuff.js"></script>
     <!-- modules -->
@@ -100,6 +109,7 @@
     <script type="text/javascript" src="scripts/controllers/welcome.js"></script>
     <script type="text/javascript" src="scripts/controllers/album.js"></script>
     <script type="text/javascript" src="scripts/controllers/story.js"></script>
+    <script type="text/javascript" src="scripts/controllers/location.js"></script>
 </body>
 
 </html>
