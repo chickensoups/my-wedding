@@ -6,12 +6,12 @@
              nhatrai: {
                  lat: 21.032335,
                  lng: 105.579339,
-                 message: "<h2>Nhà trai</h2>" + "<button class='btn btn-primary' type='button'>Địa chỉ: <span class='badge'>Liên Kết, Cần Kiệm, Thạch Thất, Hà Nội</span></button>" + "<button class='btn btn-warning' type='button'>Bố: <span class='badge'>Kiều Văn Linh</span></button>" + "<button class='btn btn-success' type='button'>Mẹ: <span class='badge'>Chu thị tính</span></button>" + "<button class='btn btn-danger' type='button'>Giờ ăn: <span class='badge'>14h00 ngày 11/02/2017</span></button>" + "<button class='btn btn-danger' type='button'>Hôn lễ: <span class='badge'>11h30 ngày 12/02/2017</span></button>"
+                 message: "<h2>Nhà trai</h2>" + "<button class='btn btn-primary' type='button'><span class='badge'>Liên Kết, Cần Kiệm, Thạch Thất, Hà Nội</span></button>" + "<button class='btn btn-warning' type='button'>Bố: <span class='badge'>Kiều  Văn  Linh</span></button>" + "<button class='btn btn-success' type='button'>Mẹ: <span class='badge'>Chu  Thị  Tính</span></button>" + "<button class='btn btn-danger' type='button'>Tiệc cưới: <span class='badge'>14h00 ngày 11/02/2017</span></button>" + "<button class='btn btn-danger' type='button'>Hôn lễ: <span class='badge'>11h30 ngày 12/02/2017</span></button>"
              },
              nhagai: {
                  lat: 20.438353,
                  lng: 106.045607,
-                 message: "<h2>Nhà gái</h2>" + "<button class='btn btn-primary' type='button'>Địa chỉ: <span class='badge'>Duyên Hạ, Minh Thuận, Vụ Bản, Nam Định</span></button>" + "<button class='btn btn-warning' type='button'>Bố: <span class='badge'>Nguyễn Thanh Nghị</span></button>" + "<button class='btn btn-success' type='button'>Mẹ: <span class='badge'>Phạm Thị Yên</span></button>" + "<button class='btn btn-danger' type='button'>Giờ ăn: <span class='badge'>10h00 ngày 11/02/2017</span></button>" + "<button class='btn btn-danger' type='button'>Hôn lễ: <span class='badge'>7h30 ngày 12/02/2017</span></button>"
+                 message: "<h2>Nhà gái</h2>" + "<button class='btn btn-primary' type='button'><span class='badge'>Duyên Hạ, Minh Thuận, Vụ Bản, Nam Định</span></button>" + "<button class='btn btn-warning' type='button'>Bố: <span class='badge'>Nguyễn Thanh Nghị</span></button>" + "<button class='btn btn-success' type='button'>Mẹ: <span class='badge'>Phạm Thị Yên</span></button>" + "<button class='btn btn-danger' type='button'>Tiệc cưới: <span class='badge'>10h00 ngày 11/02/2017</span></button>" + "<button class='btn btn-danger' type='button'>Hôn lễ: <span class='badge'>7h30 ngày 12/02/2017</span></button>"
              }
          };
 

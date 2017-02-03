@@ -27,13 +27,19 @@
 </head>
 
 <body ng-app="wedding-app">
+    <audio loop="loop" autoplay="autoplay">
+        <source src="audio/music.ogg" />
+        <source src="audio/music.mp3" />
+    </audio>
     <uib-tabset active="0" justified="true">
-        <uib-tab index="0" heading="Xin chào/ Welcome">
+        <uib-tab index="0">
+            <uib-tab-heading>
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Xin chào/ Welcome
+            </uib-tab-heading>
             <div class="welcome" style="" ng-controller="WelcomeController as welcomeCtrl">
                 <div class="counterWrapper col-md-6 col-md-offset-3">
                     <div class="counterDiv">
-                        <h1 style="font-size: 50px">Đám cưới của Vương & Duyên</h1>
-                        <h1>Vương & Duyên's wedding</h1>
+                        <h1 style="font-size: 50px">Minh Vương & Hồng Duyên</h1>
                         <div id="counter">
                         </div>
                     </div>
@@ -42,14 +48,16 @@
                     <div uib-slide ng-repeat="slide in welcomeCtrl.slides track by slide.id" index="slide.id">
                         <img ng-src="{{slide.image}}" style="margin:auto;">
                         <div class="carousel-caption">
-                            <h4>Slide {{slide.id}}</h4>
                             <p>{{slide.text}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </uib-tab>
-        <uib-tab index="1" heading="Chuyện tình/ Our Story">
+        <uib-tab index="1">
+            <uib-tab-heading>
+                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Chuyện tình/ Our Story
+            </uib-tab-heading>
             <div class="story" style="" ng-controller="StoryController as storyCtrl">
                 <timeline>
                     <timeline-event ng-repeat="event in storyCtrl.events" side="alternate">
@@ -67,16 +75,22 @@
                 </timeline>
             </div>
         </uib-tab>
-        <uib-tab index="2" heading="Ảnh cưới/ Photo Album">
+        <uib-tab index="2">
+            <uib-tab-heading>
+                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Ảnh cưới/ Photo Album
+            </uib-tab-heading>
             <div class="album" style="text-align: center;" ng-controller="AlbumController as albumCtrl">
                 <div class="galleryWrapper">
                     <div id="gallery" style="display:none;">
-                        <img ng-repeat="image in albumCtrl.images" alt="{{image.text}}" src="images/album/thumb/{{image.name}}" data-image="images/album/{{image.name}}" data-description="{{image.text}}">
+                        <img ng-repeat="image in albumCtrl.images" alt="{{image.text}}" ng-src="images/album/thumb/{{image.name}}" data-image="images/album/{{image.name}}" data-description="{{image.text}}">
                     </div>
                 </div>
             </div>
         </uib-tab>
-        <uib-tab index="3" heading="Địa điểm/ Location" id="location">
+        <uib-tab index="3" id="location">
+            <uib-tab-heading>
+                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Địa điểm/ Location
+            </uib-tab-heading>
             <div class="location" ng-controller="LocationController as locationCtrl">
                 <leaflet center="locationCtrl.center" layers="locationCtrl.layers" paths="locationCtrl.paths" markers="locationCtrl.markers" closePopupOnClick="false" width="100%" height="800px"></leaflet>
             </div>

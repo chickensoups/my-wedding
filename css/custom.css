@@ -1,3 +1,19 @@
+.nav-tabs.nav-justified {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-tabs.nav-justified > li {
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #f0e68c
+}
+
+.tab-content {
+    margin-top: 50px;
+}
+
 .welcome {
     position: relative;
     text-align: center;
@@ -11,26 +27,46 @@
     width: 100%;
 }
 
+.welcome .slider .carousel-caption {
+    font-size: 33px;
+    margin-bottom: 18%;
+    color: black;
+    background: rgba(255, 255, 255, .5);
+}
+
 .counterWrapper {
-	text-align: center;;
+    text-align: center;
+    z-index: 10;
 }
 
 .counterDiv {
     position: absolute;
     top: 50px;
-    z-index: 100;
-    text-shadow: 2px 2px 2px #ffffff;
+    z-index: 10;
     font-weight: bold;
+    background: rgba(255, 255, 255, .5);
 }
 
 .not-visible {
-  visibility: hidden;
+    visibility: hidden;
+}
+
+.story {
+    background-clip: padding-box;
+    display: block;
+    border-left: 10px dotted black;
+    border-right: 10px dotted black;
+    background-image: url('../images/timelinebg.png');
 }
 
 .story img {
-	width: 400px;
+    width: 400px;
 }
 
 .timeline timeline-event:nth-child(odd) {
-	text-align: right;
+    text-align: right;
+}
+
+timeline-panel {
+    background: rgba(255, 255, 255, .7) !important;
 }

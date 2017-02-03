@@ -35,7 +35,7 @@ angular.module('wedding-app')
             badgeIconClass: 'glyphicon-heart',
             title: '13/07/2014',
             content: 'First kiss',
-            img: 'kiss.jpg'
+            img: 'kiss.png'
         }, {
             badgeClass: badgeClasss[Math.floor(Math.random() * badgeClasss.length)],
             badgeIconClass: 'glyphicon-glass',
@@ -53,7 +53,7 @@ angular.module('wedding-app')
             badgeIconClass: 'glyphicon-flash',
             title: '15/09/2014',
             content: 'Ngày tỏ tình hj hj',
-            img: 'totinh.jpg'
+            img: 'totinh.png'
         }, {
             badgeClass: badgeClasss[Math.floor(Math.random() * badgeClasss.length)],
             badgeIconClass: 'glyphicon-tree-conifer',
